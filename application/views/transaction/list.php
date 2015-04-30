@@ -29,7 +29,7 @@
     <tr>
         <th style='width:120px'>操作</th>
         <th>交易人</th>
-        <th>金额(元)</th>
+        <th>单价(元)</th>
         <th>交易类型</th>
         <th>购买</th>
         <th>客户</th>

@@ -1,8 +1,17 @@
 <link rel="stylesheet" href="<?echo base_url();?>js/editor/themes/default/default.css" />
 <link rel="stylesheet" href="<?echo base_url();?>js/editor/plugins/code/prettify.css" />
 <div>
-	<h1>添加产品</h1>
-	<?php echo form_open('product/add', 'id="detailForm"'); ?>
+<?php
+		$url =  $this->uri->segment(3);
+            if($url=='servicelist'){
+                echo '<h1>添加服务产品</h1>';
+            }
+            elseif ($url=='materiallist') {
+                echo '<h1>添加产品物料</h1>';
+            }
+?>
+	
+	<?php echo form_open('product/add/'.$this->uri->segment(3), 'id="detailForm"'); ?>
 	<table  border="0" cellpadding="3" cellspacing="0" >
 		<tr>
 			<th width="20%">产品名称：</th>

@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>管理中心登陆 V1.0</title>
+<title>管理中心登陆 V1.1</title>
 	<script src="<?php echo base_url();?>/js/jquery.js"></script>
 	<script src="<?php echo base_url();?>/js/jquery.validate.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/login/login.css" />

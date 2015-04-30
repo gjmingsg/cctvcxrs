@@ -3,10 +3,10 @@
 	<?php
 			$CI = &get_instance(); 
 	 		$usertype = $CI->session->userdata("usertype");
-	 		if($usertype==0)
+	 		if($usertype==0 && ($this->uri->segment(2)=='servicelist' ||$this->uri->segment(2)=='materiallist' ))
 	 		{
-	?>
-		<button onclick="return window.location = '<?php echo site_url("product/add");?>';">添加</button>
+		?>
+		<button onclick="return window.location = '<?php echo site_url("product/add"."/".$this->uri->segment(2));?>';">添加</button>
 	<?php }?>
 	</div>
 	<div class="fr" id="search"> 

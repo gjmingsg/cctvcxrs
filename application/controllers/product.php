@@ -75,7 +75,7 @@ class Product extends CI_Controller {
         $data['title'] = '添加产品' ;
         $this->form_validation->set_rules('ProductName', '产品名称', 'required');
         $this->form_validation->set_rules('Price', '产品价格', 'required|numeric|max_length[10]');
-  
+        
         if ($this->form_validation->run() === FALSE)
         {
            $data['include'] = 'product/add';
@@ -83,12 +83,22 @@ class Product extends CI_Controller {
         }
         else
         {
+            $url = $this->uri->segment(3);
+            //echo $url;
+            $ProductType='';
+            if($url=='servicelist'){
+                $ProductType='服务产品';
+            }
+            elseif ($url=='materiallist') {
+                $ProductType='产品物料';
+            }
             $this->product_model->insert(
                 $this->input->post('ProductName'),
                 $this->input->post('Price'),
-                $this->input->post('Description')
+                $this->input->post('Description'),
+                $ProductType
             );
-            redirect('/product/index', 'refresh');
+            redirect('/product/'.$url, 'refresh');
         }
     }
 
